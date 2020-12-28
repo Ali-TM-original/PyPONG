@@ -36,12 +36,14 @@ def ball_collision_overall():
     if ball.top <= 0 or ball.bottom >= WIDTH:
         bally_speed *= -1
     # collision with paddles
-    if ball.colliderect(paddle1) or ball.colliderect(paddle2):
+     if ball.colliderect(paddle1) and ballx_speed > 0:     # or ball.colliderect(paddle2): #added ballx_speed >0 check to fix a visual bug
         mixer.music.play(1)
         ballx_speed *= -1
         # bally_speed *= -1  this dosen't work as the y speed changes thus it bounces back in the same direction
 
-
+    if ball.colliderect(paddle2) and ballx_speed < 0:  #added ballx_speed <0 check to fix a visual bug
+        mixer.music.play(1)
+        ballx_speed *= -1
 # DETECTION IF PADDLE either OUT OF SCREEN
 def detection():
     if paddle1.top <= 0:
