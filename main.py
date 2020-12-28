@@ -1,7 +1,3 @@
-# ball = pygame.Rect(WIDTH/2 - 15, HEIGHT/2 - 15, 30, 30)
-# player1 = pygame.Rect(WIDTH+180, HEIGHT/2 - 70, 10, 140)
-# player2 = pygame.Rect(10, HEIGHT/2 - 70, 10, 140)
-
 
 # Import the pygame library and initialise the game engine
 import pygame
@@ -129,14 +125,14 @@ while True:
 
     screen.fill(BLACK)
     # middle line
-    pygame.draw.line(screen, WHITE, [349, 0], [349, 500], 2)
+    pygame.draw.line(screen, WHITE, [349, 0], [349, 500], 2)   # Draws separating line
     # paddles
     pygame.draw.rect(screen, WHITE, paddle1)
     pygame.draw.rect(screen, WHITE, paddle2)
     # ball
     pygame.draw.ellipse(screen, WHITE, ball)
     # score text
-    player1_text = font.render(f'{player1_score}', True, WHITE)
+    player1_text = font.render(f'{player1_score}', True, WHITE)  
     player2_text = font.render(f'{player2_score}', True, WHITE)
     screen.blit(player2_text, (307, 250))
     screen.blit(player1_text, (350, 250))
